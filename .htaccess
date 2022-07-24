@@ -1,0 +1,12 @@
+#Экранирование
+php_flag magic_qoutes_gpc Off
+#Устанавливаем кодировку по умолчанию
+AddDefaultCharset utf-8
+#Иcпользуем только index.php
+DirectoryIndex index.php
+#Включаем
+RewriteEngine on
+#Условия запроса файла
+RewriteCond %(REQUEST_FILENAME) !-f
+#Перенаправления пользователя на файл index.php
+RewriteRule ^(.*) index.php
